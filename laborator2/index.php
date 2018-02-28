@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <html>
 <body>
+Welcome to SaintTropez
 <?php
-echo "13 bidinele si 1 trafalet!";
+    echo "Succes" ;
 ?>
 
 </body>
