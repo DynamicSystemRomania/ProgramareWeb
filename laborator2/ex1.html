@@ -40,7 +40,7 @@
         <div>Un mod foarte eficient de nădire izolată, prin care trei jumătăți de boilies – de exemplu – pot ajunge lângă momeală fără să stea pe substrat lipite una de cealaltă. O croșetă lungă este de preferat uneia clasice pentru că putem trage boliesurile pe banda solubilă dintr-o singură mișcare.</div>
     </font>
 
-    <form action = "index.php" method="get">
+    <form action = "index.php" method="get" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
       <fieldset webkit-margin-end = ""><legend>Comenteaza:</legend>
           <table>
               <tr>
@@ -53,11 +53,17 @@
                       First name:<br>
                       <input type="text" name="firstname"><br>
                   </td>
+                  <td>
+                      Last name:<br>
+                      <input type="text" name="lastname"><br/>
+
+                  </td>
               </tr>
               <tr>
                   <td>
-                      Last name:<br>
-                      <input type="text" name="lastname">
+                      Email:<br>
+                      <input type="text" name="email"><br>
+                      <input type="checkbox"  id="agree" /> <font size="6"> I have read and agree to the Terms and Conditions and Privacy Policy</font>
                   </td>
                   <td align="left">
                       <input type="submit" value="Submit" title="Send" >
@@ -65,6 +71,8 @@
               </tr>
           </table>
       </fieldset>
+        <iframe src = ex3.html width="1500" >
+        </iframe>
     </form>
 </body>
 </html>

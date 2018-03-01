@@ -1,9 +1,10 @@
 <html>
 <body>
-Welcome to SaintTropez
-<?php
-    echo "Succes" ;
-?>
 
+<?php
+    echo "Succes, ai trimis un mesaj";
+    $email = $_GET["email"];
+    echo $email;
+?>
 </body>
 </html>
