@@ -15,4 +15,5 @@ echo $bar;
 $bar->setNumberOfTasks();
 $bar->initScore();
 $bar->checkTasks();
+$bar->sortTasks();
 

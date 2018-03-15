@@ -7,7 +7,23 @@
  */
 
 
-class ParseHomework
+
+function comp($a, $b)
+{
+    if ($a[0] == $b[0]) {
+        return 0;
+    }
+    return ($a[0] < $b[0]) ? -1 : 1;
+}
+
+
+interface IParseHomework
+{
+
+    public function write_text();
+}
+
+class ParseHomework implements IParseHomework
 {
     public $nume, $grupa, $nr_tema, $obiect, $result;
     private $numarTaskuri;
@@ -52,12 +68,24 @@ class ParseHomework
 
     public function checkTasks(){
 
-        for($i=1; $i<=$this->numarTaskuri; $i+=1){
+        for($i=0; $i<$this->numarTaskuri; $i+=1){
             $aux = [rand(2, 10), $this->generateRandomString()];
             $this->score[$i] = $aux;
         }
 
         print_r($this->score);
+    }
+
+    public function sortTasks(){
+
+        usort($this->score, "comp");
+        print_r($this->score);
+
+    }
+
+    public function write_text(){
+
+        print "\nFinish\n";
     }
 }
 
