@@ -19,7 +19,6 @@ function comp($a, $b)
 
 interface IParseHomework
 {
-
     public function write_text();
 }
 
