@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" onmousemove="getPozition(event)">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul#proList{list-style-position: inside}
+        li.item{list-style:none; padding:5px;}
+    </style>
+</head>
+<body onload = "setInterval(changeColor,200)">
+<p id="text" > Multa valoare Multa valoare</p>
+
+<div id = "poc" onclick="writetext()" ONKEYPRESS="writetext()" >-></div>>
+
+<form onsubmit="return getParam();">
+    <input id = "name" name="q">
+    <button type="submit">go</button>
+</form>
+
+<script>
+    a = 0;
+    text = ' castiga si razuieste';
+function writetext() {
+
+    document.getElementById("poc").textContent = document.getElementById("poc").textContent+text[a];
+    console.log(a);
+    a++
+    return true;
+}
+
+    document.getElementById("text").textContent = "Departe de casa :) ";
+
+function changeColor () {
+    var id  = Math.floor(Math.random()*10 % 3);
+    if(id == 0){
+        document.getElementById("text").style.color = "red";
+    }
+
+    if(id == 1){
+        document.getElementById("text").style.color = "green";
+    }
+
+    if(id == 2){
+        document.getElementById("text").style.color = "blue";
+    }
+
+    if(id == 3){
+        document.getElementById("text").style.color = "black";
+    }
+
+}
+
+function getPozition(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var coor ="Departe de casa :) " + "Coordinates: (" + x + "," + y + ")";
+    document.getElementById("text").textContent =  coor;
+
+
+}
+
+function getParam()
+{
+
+    console.log("Allert My text is : '" + document.getElementById("name").value+"'");
+    return false;
+
+    function writetext() {
+        console.log("Am scris");
+    }
+
+}
+
+
+</script>
+<div id="renderList"></div>
+<script>
+    (function(){
+        var ul = document.createElement('ul');
+        ul.setAttribute('id','proList');
+
+        var t, tt;
+        productList = ['a', 'b', 'c','d','a', 'b', 'c','d','a', 'b', 'c','d'];
+
+        document.getElementById('renderList').appendChild(ul);
+        productList.forEach(renderProductList);
+
+        function renderProductList(element, index, arr) {
+            var li = document.createElement('li');
+            li.setAttribute('class','item');
+
+            ul.appendChild(li);
+
+            t = document.createTextNode(element);
+
+            li.innerHTML=li.innerHTML + element;
+        }
+    })();
+
+
+
+</script>
+
+</body>
+</html>
